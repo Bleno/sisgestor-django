@@ -22,6 +22,11 @@ Gerenciamento de Docentes
 
     pip install -r requirements.txt
 
+    ./manage.py migrate
+
+    ./manage.py runserver 8001
+
+
 
 ## TODO
 
