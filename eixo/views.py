@@ -17,5 +17,5 @@ def add(request):
     if request.method == 'GET':
         return render(request, 'add.html')
     eixo = Eixo.objects.create(eixo=request.POST['eixo'])
-    eixo.save()
-    return HttpResponseRedirect(reverse('index'))
+    # eixo.save()
+    return HttpResponseRedirect(reverse('eixo'))
