@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Detail de unidade</title>
+</head>
+<body>
+{{ unidade.id }} - {{ unidade.unidade }}
+<p> {{ unidade.endereco }} </p>
+{% if unidade.ativo %}
+<p> Ativa </p>
+{% else %}
+<p> Inativa </p>
+{% endif %}
+</body>
+</html>

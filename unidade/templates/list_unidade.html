@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Lista de Unidades</title>
+</head>
+<body>
+{% if unidades %}
+    <ul>
+    {% for unidade in unidades %}
+        <li><a href="{% url 'unidade.detail' unidade.id %}">{{ unidade.unidade }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Nenhuma unidade registrada</p>
+{% endif %}
+	
+</body>
+</html>
