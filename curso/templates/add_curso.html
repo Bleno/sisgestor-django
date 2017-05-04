@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Lista de Eixos</title>
+</head>
+<h1>Cadastrar um eixo tecnologico</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'curso.add' %}" method="post">
+{% csrf_token %}
+<p><input type="text" name="curso" placeholder="Curso"></p>
+<p><input type="text" name="sigla" placeholder="Sigla"></p>
+<p>
+	<select name="eixo">
+		<option value="">--- Selecione ---</option>
+		{% for eixo in eixos %}
+		   <option value="{{ eixo.id }}">{{ eixo.eixo }}</option>}
+		{% endfor %}
+	</select>
+
+</p>
+
+
+<input type="submit" value="Adicionar" />
+</form>
+</body>
+</html>
