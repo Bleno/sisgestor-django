@@ -7,8 +7,8 @@ class CursoTestCase(TestCase):
     
     def setUp(self):
         eixo = Eixo.objects.create(eixo="Beleza")
-        Curso.objects.create(curso="Cabelereiro", id_eixo=eixo)
-        Curso.objects.create(curso="Técnico em informática", id_eixo=eixo)
+        Curso.objects.create(curso="Cabelereiro", eixo=eixo)
+        Curso.objects.create(curso="Técnico em informática", eixo=eixo)
 
     def test_curso_exists(self):
         beleza = Curso.objects.get(curso="Cabelereiro")
