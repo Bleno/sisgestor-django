@@ -1,3 +1,13 @@
 from django.db import models
 
-# Create your models here.
+
+class Escolaridade(models.Model):
+    """
+    Description: Model Description
+    """
+
+    escolaridade = models.CharField(max_length=45)
+    
+
+    class Meta:
+        pass

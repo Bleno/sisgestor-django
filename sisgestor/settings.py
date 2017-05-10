@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'eixo',
     'unidade',
     'curso',
+    'escolaridade',
 ]
 
 MIDDLEWARE = [

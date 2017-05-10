@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Lista de Escolaridades</title>
+</head>
+<body>
+{% if escolaridades %}
+    <ul>
+    {% for escolaridade in escolaridades %}
+        <li><a href="{% url 'escolaridade.detail' escolaridade.id %}">{{ escolaridade.escolaridade }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Nenhuma escolaridade registrada</p>
+{% endif %}
+	
+</body>
+</html>
