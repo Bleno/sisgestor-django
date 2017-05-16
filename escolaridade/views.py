@@ -1,6 +1,7 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse, HttpResponseRedirect
 from .models import Escolaridade
+from django.urls import reverse
 
 # Create your views here.
 
@@ -10,8 +11,14 @@ def escolaridade(request):
 	return render(request, "escolaridade.html", context)
 
 def detail(request, id):
-	return HttpResponse("OK")
+	escolaridade = get_object_or_404(Escolaridade, pk=id)
+	context = {'escolaridade': escolaridade}
+	return render(request, "escolaridade.detail.html", context)
 
 
 def  add(request):
-	return HttpResponse("OK")
+	if request.method == 'POST':
+		escolaridade = Escolaridade(escolaridade=request.POST['escolaridade'])
+		escolaridade.save()
+		return HttpResponseRedirect(reverse('escolaridade'))
+	return render(request, "escolaridade.add.html")
