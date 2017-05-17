@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Lista de Situações</title>
+</head>
+<body>
+{% if situacoes %}
+    <ul>
+    {% for situacao in situacoes %}
+        <li><a href="{% url 'situacao.detail' situacao.id %}">{{ situacao.situacao }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Nenhuma situação registrada</p>
+{% endif %}
+	
+</body>
+</html>

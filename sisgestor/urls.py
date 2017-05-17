@@ -21,5 +21,6 @@ urlpatterns = [
     url(r'^unidade/', include('unidade.urls')),
     url(r'^curso/', include('curso.urls')),
     url(r'^escolaridade/', include('escolaridade.urls')),
+    url(r'^situacao/', include('situacao.urls')),
     url(r'^admin/', admin.site.urls),
 ]

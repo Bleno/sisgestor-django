@@ -1,3 +1,7 @@
 from django.db import models
 
-# Create your models here.
+
+class Situacao(models.Model):
+
+    situacao = models.CharField(max_length=45)
+

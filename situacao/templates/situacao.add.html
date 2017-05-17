@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Lista de Eixos</title>
+</head>
+<h1>Cadastrar uma situação</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'situacao.add' %}" method="post">
+{% csrf_token %}
+<input type="text" name="situacao" placeholder="Situação">
+
+<input type="submit" value="Salvar" />
+</form>
+</body>
+</html>
