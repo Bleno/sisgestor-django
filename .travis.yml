@@ -1,0 +1,15 @@
+language: python
+python:
+    - "3.4"
+install:
+    - pip install -r requirements.txt
+    - pip install coveralls
+script:
+    - cd neolight
+    - python manage.py test eixo
+    - python manage.py test curso
+    - python manage.py test escolaridade
+    - python manage.py test situacao
+    - python manage.py test unidade
+    - coverage run --source=eixo manage.py test eixo
+after_success: coveralls
